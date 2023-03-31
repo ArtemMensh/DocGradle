@@ -1,6 +1,8 @@
 plugins {
     id 'java'
 }
+apply plugin: 'application'
+mainClassName = 'org.example.Main'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
