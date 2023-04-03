@@ -66,11 +66,11 @@ public class MyHttpHandler implements HttpHandler {
     private void handleResponse(HttpExchange httpExchange, String requestParamValue) throws IOException {
         JSONObject o = (JSONObject) JSONValue.parse(requestParamValue);
 
-        String pathDocFile = "C:/Users/men19/Downloads/weights268/Sample.docx";
-//        String pathDocFile = "/dewt/Sampledoc/Sample.docx";
+//        String pathDocFile = "C:/Users/men19/Downloads/weights268/Sample.docx";
+        String pathDocFile = "/dewt/Sampledoc/Sample.docx";
 
-        String pathToNewFile = "C:/Users/men19/Downloads/weights268/";
-//        String pathToNewFile = "/dewt/static/doc/";
+//        String pathToNewFile = "C:/Users/men19/Downloads/weights268/";
+        String pathToNewFile = "/dewt/static/doc/";
 
 
         File file = new File("C:/Users/men19/Downloads/weights268/Sample.docx");
