@@ -73,7 +73,7 @@ public class MyHttpHandler implements HttpHandler {
         String pathToNewFile = "/dewt/static/doc/";
 
 
-        File file = new File("C:/Users/men19/Downloads/weights268/Sample.docx");
+        File file = new File(pathDocFile);
         FileInputStream fis = new FileInputStream(file.getAbsolutePath());
         XWPFDocument document = new XWPFDocument(fis); // Вот и объект описанного нами класса
         String documentLine = document.getDocument().toString();
