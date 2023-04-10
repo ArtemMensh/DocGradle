@@ -71,6 +71,7 @@ public class MyHttpHandler implements HttpHandler {
 
 //        String pathToNewFile = "C:/Users/men19/Downloads/weights268/";
         String pathToNewFile = "/dewt/static/doc/";
+        String pathToNewFileUrl = "/static/doc/";
 
 
         File file = new File(pathDocFile);
@@ -114,13 +115,18 @@ public class MyHttpHandler implements HttpHandler {
         String nameNewFile = "Doc" + "-" + rand.nextInt(1000) + ".docx";
         document.write(new FileOutputStream(new File(pathToNewFile + nameNewFile)));
 
-        httpExchange.sendResponseHeaders(200, (pathToNewFile + nameNewFile).length());
+        httpExchange.getResponseHeaders().set("Access-Control-Allow-Origin", "*");
+        httpExchange.getResponseHeaders().set("Access-Control-Allow-Credentials","true");
+        httpExchange.getResponseHeaders().set("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
+        httpExchange.getResponseHeaders().set("Access-Control-Allow-Headers", "Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
+
+        httpExchange.sendResponseHeaders(200, (pathToNewFileUrl + nameNewFile).length());
+
         OutputStream outputStream = httpExchange.getResponseBody();
 
-        outputStream.write((pathToNewFile + nameNewFile).getBytes());
+        outputStream.write((pathToNewFileUrl + nameNewFile).getBytes());
         outputStream.flush();
         outputStream.close();
-        System.getProperties();
     }
 
 
